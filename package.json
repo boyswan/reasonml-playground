@@ -13,7 +13,6 @@
     "clean": "bsb -clean-world"
   },
   "keywords": [],
-  "author": "Mateusz Zatorski",
   "license": "MIT",
   "dependencies": {
     "bs-director": "^0.0.1",
