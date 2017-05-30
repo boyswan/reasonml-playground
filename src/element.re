@@ -9,6 +9,7 @@ module Styles = {
 
   let text = style
     fontSize::"16px" ();
+    
 
   let paragraph = style
     fontSize::"12px" ();
