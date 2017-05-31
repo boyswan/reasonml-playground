@@ -8,12 +8,12 @@ module App = {
     Js.log "clicked!";
     None
   };
-  let testElement = <div> (toStr "testElement") </div>;
+  let testElement = <div> (strToEl "testElement") </div>;
 
-  let render { props, updater } =>
+  let render _ =>
     <div className="App">
-      (el Title "I'm a h1")
-      (el Text "I'm a span")
+      (el Title String "I'm a h1")
+      (el Text String "I'm a span")
     </div>;
 };
 

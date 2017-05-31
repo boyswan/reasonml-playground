@@ -1,5 +1,5 @@
 let style = ReactDOMRe.Style.make;
-let toStr = ReactRe.stringToElement;
+let strToEl = ReactRe.stringToElement;
 
 module Styles = {
 
@@ -17,27 +17,32 @@ module Styles = {
 
 
 type getType =
-  | Int int
-  | String string;
+  | String
+  | Number;
 
-let getType v => {
-  switch v {
-    | String _ => ("string", v)
-    | Int _ => ("number", v)
+let getType t v => {
+  switch t {
+    | String _ => v |> strToEl
+    | Number _ => v |> strToEl
   };
 };
+
+
+type t =
+  | String
+  | Component
+  | Number;
 
 type element =
   | Title
   | Text
   | Paragraph;
 
-type el = element => string => ReactRe.reactElement;
-let el t v => {
-  /* Js.log (getType 3); */
-  /* Js.log (getType v); */
-  let value = toStr v;
-  switch t {
+type el = element => t => ReactRe.reactElement;
+let el e t v => {
+  let value = getType t v;
+  Js.log value;
+  switch e {
     | Title => <h1 style=Styles.title>value</h1>
     | Text => <span style=Styles.text>value</span>
     | Paragraph => <p style=Styles.paragraph>value</p>
