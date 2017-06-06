@@ -9,11 +9,23 @@
   },
   "bs-dependencies": [
     "reason-react",
-    "bs-director"
+    "bs-director",
+    "reductive"
   ],
   "sources": [
     {
-      "dir": "src"
-    }
+      "dir": "src",
+      "subdirs": [
+        {
+          "dir": "reductive"
+        },
+        {
+          "dir": "components"
+        },
+        {
+          "dir": "helpers"
+        }
+      ]
+    },
   ]
 }
