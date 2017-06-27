@@ -1,8 +1,9 @@
-module History = {
-  type element;
-  let window: element = [%bs.raw "window"];
-  external pushState : state::unit => title::string => path::string => element =
-    "history.pushState" [@@bs.val];
-};
+type history;
 
-let push = History.pushState title::"" state::();
+let addHash = (^) "/#";
+
+let capital = String.capitalize;
+
+external pushState : string => string => string => history = "history.pushState" [@@bs.val];
+
+let push path => pushState "null" (capital path) (addHash path);

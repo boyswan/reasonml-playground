@@ -7,5 +7,6 @@ module Root =
 
 let app = <Root store=Store.store component=App.createElement />;
 
+
 ReactDOMRe.renderToElementWithId app "root";
 /* ReactDOMRe.renderToElementWithId <Router route /> "root"; */
